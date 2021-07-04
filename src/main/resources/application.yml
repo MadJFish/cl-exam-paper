@@ -1,7 +1,28 @@
+graphql.servlet:
+  mapping: /graphql
+  enabled: true
+  exception-handlers-enabled: true
+  contextSetting: PER_REQUEST_WITH_INSTRUMENTATION
+
+# GraphiQL (not GraphQL!)
+graphiql:
+  mapping: /graphiql
+  endpoint.graphql: /graphql
+  static.basePath: /
+  enabled: true
+  pageTitle: GraphiQL
+  props:
+    resources.defaultQuery: schema.graphqls
+    variables.editorTheme: "solarized light"
+
 spring:
   datasource:
     platform: POSTGRESQL
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://
-    username:
-    password:
+#    url: jdbc:postgresql://cupcakelearning.cyqsklq9p761.ap-southeast-1.rds.amazonaws.com:5432/ccl
+#    username: cupcakelearning
+#    password: cupcakelearning
+    url: jdbc:postgresql:ccl
+    username: postgres
+    password: postgres
+
