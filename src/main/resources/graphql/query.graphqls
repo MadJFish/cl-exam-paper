@@ -1,0 +1,5 @@
+# All available queries on this graphql server
+type Query {
+    findAllItemCategories: [String]
+    findItemCategoryByCategory(category:String): String
+}

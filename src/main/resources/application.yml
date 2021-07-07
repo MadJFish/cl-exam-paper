@@ -1,19 +1,11 @@
-graphql.servlet:
-  mapping: /graphql
-  enabled: true
-  exception-handlers-enabled: true
-  contextSetting: PER_REQUEST_WITH_INSTRUMENTATION
-
-# GraphiQL (not GraphQL!)
-graphiql:
-  mapping: /graphiql
-  endpoint.graphql: /graphql
-  static.basePath: /
-  enabled: true
-  pageTitle: GraphiQL
-  props:
-    resources.defaultQuery: schema.graphqls
-    variables.editorTheme: "solarized light"
+graphql:
+  servlet:
+    exception-handlers-enabled: true
+  playground:
+    tabs:
+      - name: Bank account sample query
+        query: classpath:playground/itemCategory.graphql
+        variables: classpath:playground/itemCategoryVariables.json
 
 spring:
   datasource:

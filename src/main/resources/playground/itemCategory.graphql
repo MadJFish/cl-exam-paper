@@ -1,0 +1,13 @@
+query GET_ALL {
+    findAllItemCategories
+}
+
+query GET_BY_INPUT($category: String) {
+    findItemCategoryByCategory(category: $category)
+}
+
+mutation ADD {
+    addItemCategory(category: "ADDING") {
+        category
+    }
+}
