@@ -6,6 +6,23 @@ query GET_BY_INPUT($category: String) {
     findItemCategoryByCategory(category: $category)
 }
 
+query PAGE($first: Int!, $after: String) {
+    itemCategories(first: $first, after: $after) {
+        edges {
+            cursor
+            node {
+                category
+            }
+        }
+        pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+        }
+    }
+}
+
 mutation ADD {
     addItemCategory(category: "ADDING") {
         category
