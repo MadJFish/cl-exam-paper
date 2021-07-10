@@ -1,4 +1,4 @@
-package com.cupcake.learning.exampaper.resolver;
+package com.cupcake.learning.exampaper.sample.resolver;
 
 import com.cupcake.learning.exampaper.connection.CursorUtil;
 import com.cupcake.learning.exampaper.sample.ItemCategory;
@@ -39,14 +39,13 @@ public class ItemCategoryQueryResolver implements GraphQLQueryResolver {
 
     public Connection<ItemCategory> itemCategories(int first, @Nullable String cursor) {
         Pageable pageable = PageRequest.of(0, first < 1 ? 20 : first);
-        String validCursor;
+        Page<ItemCategory> pageResult;
         if (cursor == null || cursor.isBlank()) {
-            validCursor = "";
+            pageResult = itemCategoryRepository.findByOrderByCategoryAsc(pageable);
         } else {
-            validCursor = cursor;
+            pageResult = itemCategoryRepository.findByCategoryAfterOrderByCategoryAsc(pageable, cursorUtil.testDecode(cursor));
         }
 
-        Page<ItemCategory> pageResult = itemCategoryRepository.findByCategoryAfterOrderByCategoryAsc(pageable, cursorUtil.testDecode(validCursor));
         List<Edge<ItemCategory>> edges = pageResult.getContent()
                 .stream()
                 .map(itemCategory -> new DefaultEdge<>(itemCategory, cursorUtil.testEncode(itemCategory.getCategory())))

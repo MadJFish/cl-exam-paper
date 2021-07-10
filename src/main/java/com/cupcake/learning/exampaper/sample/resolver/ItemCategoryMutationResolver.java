@@ -1,4 +1,4 @@
-package com.cupcake.learning.exampaper.resolver;
+package com.cupcake.learning.exampaper.sample.resolver;
 
 import com.cupcake.learning.exampaper.sample.ItemCategory;
 import com.cupcake.learning.exampaper.sample.ItemCategoryRepository;

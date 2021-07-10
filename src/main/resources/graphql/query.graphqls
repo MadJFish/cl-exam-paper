@@ -1,5 +1,10 @@
 # All available queries on this graphql server
 type Query {
+    # auth
+    users(first: Int!, after: String): UserConnection @connection (for: "User")
+
+
+    # sample; meant for spiking graphQL
     findAllItemCategories: [String]
     findItemCategoryByCategory(category:String): String
     itemCategories(first: Int!, after: String): ItemCategoryConnection @connection (for: "ItemCategory")

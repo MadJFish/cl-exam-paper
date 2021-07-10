@@ -6,6 +6,9 @@ graphql:
       - name: Item Category sample query
         query: classpath:playground/itemCategory.graphql
         variables: classpath:playground/itemCategoryVariables.json
+      - name: User query
+        query: classpath:playground/user.graphql
+        variables: classpath:playground/userVariables.json
 
 spring:
   datasource:
@@ -17,4 +20,9 @@ spring:
     url: jdbc:postgresql:ccl
     username: postgres
     password: postgres
-
+  second-datasource:
+    platform: POSTGRESQL
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql:auth
+    username: postgres
+    password: postgres

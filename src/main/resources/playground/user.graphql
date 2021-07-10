@@ -1,0 +1,18 @@
+query PAGE($first: Int!, $after: String) {
+    users(first: $first, after: $after) {
+        edges {
+            cursor
+            node {
+                id
+                password
+                username
+            }
+        }
+        pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+        }
+    }
+}
