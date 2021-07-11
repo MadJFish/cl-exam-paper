@@ -9,6 +9,12 @@ graphql:
       - name: User query
         query: classpath:playground/user.graphql
         variables: classpath:playground/userVariables.json
+      - name: Book query
+        query: classpath:playground/book.graphql
+        variables: classpath:playground/bookVariables.json
+      - name: Exam query
+        query: classpath:playground/exam.graphql
+        variables: classpath:playground/examVariables.json
 
 spring:
   datasource:
@@ -26,3 +32,12 @@ spring:
     url: jdbc:postgresql:auth
     username: postgres
     password: postgres
+  exam-book-datasource:
+    platform: POSTGRESQL
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql:exam_book
+    username: postgres
+    password: postgres
+  jpa:
+    generate-ddl: true
+    hibernate.ddl-auto: create

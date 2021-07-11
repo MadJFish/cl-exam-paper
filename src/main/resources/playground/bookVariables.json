@@ -1,0 +1,12 @@
+{
+  "first": 1,
+  "after": "",
+  "bookInput": {
+    "consistsOf": [],
+    "name": "book name",
+    "description": "book description",
+    "price": 100.2
+  },
+  "authorId": "c2d29867-3d0b-d497-9191-18a9d8ee7830",
+  "bookId": "b78f3594-63af-4cc2-b391-29d71c51ce3a"
+}

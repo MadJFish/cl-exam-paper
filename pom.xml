@@ -16,6 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<graphql.version>11.1.0</graphql.version>
+		<modelmapper.version>2.3.7</modelmapper.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -32,7 +33,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- GraphQL & GraphIQL -->
+		<!-- GraphQL -->
 		<dependency>
 			<groupId>com.graphql-java-kickstart</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
@@ -43,6 +44,13 @@
 			<artifactId>playground-spring-boot-starter</artifactId>
 			<version>${graphql.version}</version>
 			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Model mapper -->
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${modelmapper.version}</version>
 		</dependency>
 
 		<dependency>

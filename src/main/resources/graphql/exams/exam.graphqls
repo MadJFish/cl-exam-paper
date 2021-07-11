@@ -1,0 +1,20 @@
+type Exam {
+    id: ID
+    books: [Book]
+    authorId: ID
+    name: String
+    description: String
+    price: Float
+    subject: String
+    durationInMinutes: Int
+    isActive: Boolean
+}
+
+input ExamInput {
+    bundledIn: [ID!]
+    name: String
+    description: String
+    price: Float
+    subject: String
+    durationInMinutes: Int
+}

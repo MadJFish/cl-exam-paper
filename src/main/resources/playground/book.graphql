@@ -1,0 +1,77 @@
+# TODO: Test everything here
+query book($bookId: ID!) {
+    book(id: $bookId) {
+        id
+        exams {
+            id
+            name
+            description
+            price
+            subject
+            durationInMinutes
+        }
+        authorId
+        name
+        description
+        price
+    }
+}
+
+# No exams are fetched due to JPA.
+# This is by design and we can change it if required.
+query book_pagination($first: Int!, $after: String) {
+    books(first: $first, after: $after) {
+        edges {
+            cursor
+            node {
+                id
+                authorId
+                name
+                description
+                price
+            }
+        }
+        pageInfo {
+            hasPreviousPage
+            hasNextPage
+            startCursor
+            endCursor
+        }
+    }
+}
+
+mutation book_add($authorId: ID!, $bookInput: BookInput!) {
+    addBook(authorId: $authorId, input: $bookInput) {
+        id
+        name
+        description
+        price
+    }
+}
+
+mutation book_update($bookId: ID!, $bookInput: BookInput!) {
+    updateBook(bookId: $bookId, input: $bookInput) {
+        id
+        name
+        description
+        price
+    }
+}
+
+# Activate
+mutation book_publish($bookId: ID!) {
+    publishBook(bookId: $bookId) {
+        id
+        name
+        isActive
+    }
+}
+
+# Deactivate
+mutation book_cancel($bookId: ID!) {
+    cancelBook(bookId: $bookId) {
+        id
+        name
+        isActive
+    }
+}

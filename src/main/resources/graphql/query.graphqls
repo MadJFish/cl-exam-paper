@@ -3,6 +3,11 @@ type Query {
     # auth
     users(first: Int!, after: String): UserConnection @connection (for: "User")
 
+    # exam book
+    book(id: ID!): Book
+    books(first: Int!, after: String): BookConnection @connection (for: "Book")
+    exam(id: ID!): Exam
+    exams(first: Int!, after: String): ExamConnection @connection (for: "Exam")
 
     # sample; meant for spiking graphQL
     findAllItemCategories: [String]
