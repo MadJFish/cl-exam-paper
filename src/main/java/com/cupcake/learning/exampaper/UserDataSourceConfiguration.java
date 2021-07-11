@@ -24,14 +24,14 @@ import javax.sql.DataSource;
 public class UserDataSourceConfiguration {
     @Bean
     @Primary
-    @ConfigurationProperties("spring.second-datasource")
+    @ConfigurationProperties("spring.user-datasource")
     public DataSourceProperties userDataSourceProperties() {
         return new DataSourceProperties();
     }
 
     @Primary
     @Bean
-    @ConfigurationProperties("spring.second-datasource.configuration")
+    @ConfigurationProperties("spring.user-datasource.configuration")
     public DataSource userDataSource() {
         return userDataSourceProperties().initializeDataSourceBuilder()
                 .type(HikariDataSource.class).build();

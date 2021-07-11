@@ -20,7 +20,7 @@ spring:
     url: jdbc:postgresql:ccl
     username: postgres
     password: postgres
-  second-datasource:
+  user-datasource:
     platform: POSTGRESQL
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql:auth
