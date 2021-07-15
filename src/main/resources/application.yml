@@ -3,9 +3,6 @@ graphql:
     exception-handlers-enabled: true
   playground:
     tabs:
-      - name: Item Category sample query
-        query: classpath:playground/itemCategory.graphql
-        variables: classpath:playground/itemCategoryVariables.json
       - name: User query
         query: classpath:playground/user.graphql
         variables: classpath:playground/userVariables.json

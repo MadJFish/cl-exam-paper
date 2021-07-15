@@ -1,8 +1,5 @@
 # All mutations available in graphql
 type Mutation {
-    addItemCategory(category: String!): ItemCategory!
-
-    # TODO: Revise; Find some convention to follow
     # book
     addBook(authorId: ID!, input: BookInput!): Book!
     updateBook(bookId: ID!, input: BookInput!): Book!
