@@ -25,13 +25,13 @@ import java.util.HashMap;
         transactionManagerRef = "examBookTransactionManager")
 public class ExamBookDataSourceConfiguration {
     @Bean
-    @ConfigurationProperties("spring.exam-book-datasource")
+    @ConfigurationProperties("spring.datasource")
     public DataSourceProperties examBookDataSourceProperties() {
         return new DataSourceProperties();
     }
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.exam-book-datasource.configuration")
+    @ConfigurationProperties(prefix = "spring.datasource.configuration")
     public DataSource examBookDataSource() {
         return examBookDataSourceProperties().initializeDataSourceBuilder()
                 .type(HikariDataSource.class).build();

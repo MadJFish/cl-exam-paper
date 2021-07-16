@@ -2,11 +2,11 @@
   "first": 1,
   "after": "",
   "bookInput": {
-    "consistsOf": [],
+    "consistsOf": ["4d3abb57-771b-4349-b12a-ec6e61b4bb06", "6c5e4903-6f8d-44f5-86ed-bc7c1e387dd5"],
     "name": "book name",
     "description": "book description",
     "price": 100.2
   },
   "authorId": "c2d29867-3d0b-d497-9191-18a9d8ee7830",
-  "bookId": "b78f3594-63af-4cc2-b391-29d71c51ce3a"
+  "bookId": "1d570382-4956-49ba-99cf-ea11b322c587"
 }

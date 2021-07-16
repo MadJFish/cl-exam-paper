@@ -17,24 +17,18 @@ spring:
   datasource:
     platform: POSTGRESQL
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://cupcakelearning.cyqsklq9p761.ap-southeast-1.rds.amazonaws.com:5432/ccl
-#    username: cupcakelearning
-#    password: cupcakelearning
-    url: jdbc:postgresql:ccl
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://cupcakelearning.cyqsklq9p761.ap-southeast-1.rds.amazonaws.com:5432/tmp_exam_book
+    username: cupcakelearning
+    password: cupcakelearning
   user-datasource:
     platform: POSTGRESQL
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql:auth
-    username: postgres
-    password: postgres
-  exam-book-datasource:
-    platform: POSTGRESQL
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql:exam_book
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://cupcakelearning.cyqsklq9p761.ap-southeast-1.rds.amazonaws.com:5432/tmp_auth
+    username: cupcakelearning
+    password: cupcakelearning
   jpa:
     generate-ddl: true
     hibernate.ddl-auto: create
+
+server:
+  port: 8081
